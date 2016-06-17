@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+
 /**
  * Created by gbelton on 6/16/16.
  */
@@ -25,9 +27,13 @@ public class MoreInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_more_info);
 
 
-        TextView title2 = (TextView) findViewById(R.id.tvMoreTitle);
-        Typeface titleFont = Typeface.createFromAsset(getAssets(), "fonts/Wisdom Script AJ.ttf");
-        title2.setTypeface(titleFont);
+
+        tvMoreTitle = (TextView) findViewById(R.id.tvMoreTitle);
+        Typeface titleFont = Typeface.createFromAsset(getAssets(), "fonts/titleFont3.ttf");
+        tvMoreTitle.setTypeface(titleFont);
+
+        Typeface overViewFont = Typeface.createFromAsset(getAssets(), "fonts/Quattrocento-Regular.ttf");
+
 
         tvMoreTitle = (TextView) findViewById(R.id.tvMoreTitle);
         String title = getIntent().getStringExtra("title");
@@ -39,11 +45,21 @@ public class MoreInfoActivity extends AppCompatActivity {
 
         tvMoreOverview = (TextView) findViewById(R.id.tvMoreOverview);
         String moreOverview = getIntent().getStringExtra("overview");
+        //Typeface titleFont2 = Typeface.createFromAsset(getAssets(), "fonts/titleFont2.ttf");
+        //tvMoreOverview.setTypeface(titleFont2);
         tvMoreOverview.setText(moreOverview);
+        tvMoreOverview.setTypeface(overViewFont);
+
+
+
 
         ivOtherPoster = (ImageView) findViewById(R.id.ivOtherPoster);
         String posterURL = getIntent().getStringExtra("posterURL");
-        Picasso.with(this).load(posterURL).into(ivOtherPoster);
+        Picasso.with(this).load(posterURL).transform(new RoundedCornersTransformation(10, 10)).into(ivOtherPoster);
+
+        //Picasso.with(this).load(R.drawable.demo).transform(new RoundedCornersTransformation(10, 10)).into((ImageView) findViewById(R.id.image));
+
+
 
 
 
