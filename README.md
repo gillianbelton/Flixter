@@ -41,6 +41,9 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
+I encountered a lot of frustration with regards to making the app more visually appealing. I had some trouble importing and using fonts. In addition there were some features that I spent a considerable amount of time working on (a search bar, justified text) but was not able to successfully execute and so I had to move on. If I had had more time I would have liked to complete these features. 
+
+
 ## Open-source libraries used
 
 - [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
